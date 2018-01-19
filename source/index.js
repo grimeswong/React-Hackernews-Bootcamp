@@ -8,18 +8,15 @@ import ReactDOM from 'react-dom';
 //   'Hello Hacker News' // The children of this element.
 // );
 
-/* JSX Syntax */
+const title = 'Hello Hacker News';
 const element =
-  <div>
-  Hello Hacker News
+  <div
+    style={{ fontSize: 36, color: 'green' }}
+    onClick={() => window.alert(title)}
+  >
+    {title}
   </div>
-
-const myNum = React.createElement(
-  'div',
-  {dataTest: 10},
-  'Hello Hacker News'
-)
 
 const root = document.getElementById('root');
 
-ReactDOM.render(myNum, root);
+ReactDOM.render(element, root);
