@@ -9,6 +9,8 @@ import ReactDOM from 'react-dom';
 // );
 
 const title = 'Hello Hacker News';
+
+/* JSX syntax  */
 const element =
   <div
     style={{ fontSize: 36, color: 'green' }}
@@ -16,6 +18,15 @@ const element =
   >
     {title}
   </div>
+
+/* Pure JS syntax */
+// const element = React.createElement (
+//   'div',
+//   { style: {fontSize: 36, color: 'green'},
+//     onClick: () => {return window.alert(title)}
+//   },
+//   title
+// );
 
 const root = document.getElementById('root');
 
