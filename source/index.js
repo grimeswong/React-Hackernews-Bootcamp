@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import getArticles from 'hacker-news-top-ten';
 
 import Newsfeed from './View/Newsfeed';
+import Loading from './View/Loading';
 
 class Container extends React.Component {
   constructor(props) {
@@ -23,8 +24,9 @@ class Container extends React.Component {
 
   render() {
     if(!this.state.loaded) {
-      console.log("loading");
-      return(<div>Loading...</div>)
+      // console.log("loading");
+      // return(<div>Loading...</div>)
+      <Loading />
     }
 
     return(
