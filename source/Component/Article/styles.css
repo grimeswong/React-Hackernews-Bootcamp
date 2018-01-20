@@ -1,3 +1,11 @@
-h2 {
+.title {
   color: blue;
+}
+
+.description {
+  font-size: 0.9em;
+}
+
+.link {
+  text-decoration: none;
 }
