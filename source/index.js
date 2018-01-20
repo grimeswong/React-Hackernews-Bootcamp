@@ -11,13 +11,16 @@ import ReactDOM from 'react-dom';
 const title = 'Hello Hacker News';
 
 /* JSX syntax  */
-const element =
-  <div
-    style={{ fontSize: 36, color: 'green' }}
-    onClick={() => window.alert(title)}
-  >
-    {title}
-  </div>
+function Element() {  // components that start with a lower letter have their name converted into a string (when compiled)
+  return (
+    <div
+      style={{ fontSize: 36, color: 'green' }}
+      onClick={() => window.alert(title)}
+    >
+      {title}
+    </div>
+  );
+}
 
 /* Pure JS syntax */
 // const element = React.createElement (
@@ -27,6 +30,8 @@ const element =
 //   },
 //   title
 // );
+
+const element = <Element />
 
 const root = document.getElementById('root');
 
