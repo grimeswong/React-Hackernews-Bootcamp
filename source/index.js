@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Article from './Component/Article/'
+import Newsfeed from './Component/NewsFeed';
 
 
 
@@ -35,10 +35,9 @@ const ARTICLES = [
 
 const Views =
   <div>
-    <Article article={ARTICLES[0]} /> 
-    <Article article={ARTICLES[1]} />
-    <Article article={ARTICLES[2]} />
+    <Newsfeed articles={ARTICLES}/> 
   </div>
+
 
 
 const root = document.getElementById('root');
