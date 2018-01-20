@@ -1,25 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import getArticles from 'hacker-news-top-ten';
 
-import Newsfeed from './Component/NewsFeed';
+import Newsfeed from './View/Newsfeed';
 
 class Container extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {articles: []};  // for avioding the error when render nothing
+    this.state = { articles: []};  // for avioding the error when render nothing
+    this.state.loaded = false;
   }
 
   componentWillMount() {
-    setTimeout(() =>
-    this.setState({ articles: ARTICLES })
-    , 3000);
+    getArticles().then(articles => {
+      this.setState({
+        articles,
+        loaded: true
+       })
+    });
+
   }
 
   render() {
+    if(!this.state.loaded) {
+      console.log("loading");
+      return(<div>Loading...</div>)
+    }
+
     return(
       <Newsfeed
         articles = {this.state.articles}
-        /> 
+      />
     )
   }
 }

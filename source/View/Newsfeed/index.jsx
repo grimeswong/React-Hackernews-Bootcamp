@@ -1,5 +1,5 @@
 import React from 'react';
-import Article from '../Article';
+import Article from '../../Component/Article';
 
 export default function Newsfeed(props) {
   console.log('Debugger',props);
