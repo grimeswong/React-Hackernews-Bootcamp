@@ -2,7 +2,7 @@ import React from 'react';
 import Article from '../Article';
 
 export default function Newsfeed(props) {
-  console.log('hey',props);
+  console.log('Debugger',props);
   const articles = props.articles.map(article => (
     <Article
       title={article.title}

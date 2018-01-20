@@ -3,7 +3,26 @@ import ReactDOM from 'react-dom';
 
 import Newsfeed from './Component/NewsFeed';
 
+class Container extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {articles: []};  // for avioding the error when render nothing
+  }
 
+  componentWillMount() {
+    setTimeout(() =>
+    this.setState({ articles: ARTICLES })
+    , 3000);
+  }
+
+  render() {
+    return(
+      <Newsfeed
+        articles = {this.state.articles}
+        /> 
+    )
+  }
+}
 
 const LOREM_IPSUM =
   `
@@ -33,13 +52,7 @@ const ARTICLES = [
   },
 ]
 
-const Views =
-  <div>
-    <Newsfeed articles={ARTICLES}/> 
-  </div>
-
-
 
 const root = document.getElementById('root');
 
-ReactDOM.render(Views, root);
+ReactDOM.render(<Container/>, root);
