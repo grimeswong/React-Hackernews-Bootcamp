@@ -21,6 +21,7 @@ import ReactDOM from 'react-dom';
 
 
 /* JSX syntax  */
+/* Chapter1: stateless component */
 function Article(props) {  // components that start with a lower letter have their name converted into a string (when compiled)
   return (
     <div>
