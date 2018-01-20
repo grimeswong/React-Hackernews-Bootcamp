@@ -8,19 +8,7 @@ import ReactDOM from 'react-dom';
 //   'Hello Hacker News' // The children of this element.
 // );
 
-const title = 'Hello Hacker News';
-
-/* JSX syntax  */
-function Element() {  // components that start with a lower letter have their name converted into a string (when compiled)
-  return (
-    <div
-      style={{ fontSize: 36, color: 'green' }}
-      onClick={() => window.alert(title)}
-    >
-      {title}
-    </div>
-  );
-}
+// const title = 'Hello Hacker News';
 
 /* Pure JS syntax */
 // const element = React.createElement (
@@ -31,8 +19,26 @@ function Element() {  // components that start with a lower letter have their na
 //   title
 // );
 
-const element = <Element />
+
+/* JSX syntax  */
+function Article(props) {  // components that start with a lower letter have their name converted into a string (when compiled)
+  return (
+    <div>
+      <h2>Title: {props.title}</h2>
+      <p>{props.description}</p>
+      <a href={props.link}>Link</a>
+    </div>
+  );
+}
+
+const article =
+  <Article
+    title="Hello Hacker News"
+    description="Bar Bar Bar"
+    link="http://yahoo.com.au"
+  />
+
 
 const root = document.getElementById('root');
 
-ReactDOM.render(element, root);
+ReactDOM.render(article, root);
