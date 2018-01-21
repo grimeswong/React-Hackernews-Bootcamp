@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import getArticles from 'hacker-news-top-ten';
 
 import Newsfeed from './View/Newsfeed';
-import Loading from './View/Loading';
+import Loading from './Component/Loading';
 
 class Container extends React.Component {
   constructor(props) {
@@ -19,21 +19,17 @@ class Container extends React.Component {
         loaded: true
        })
     });
-
   }
 
   render() {
-    if(!this.state.loaded) {
-      // console.log("loading");
-      // return(<div>Loading...</div>)
-      <Loading />
-    }
-
-    return(
-      <Newsfeed
-        articles = {this.state.articles}
-      />
-    )
+    return (
+      <div>
+        {!this.state.loaded ?
+          (<Loading />):  // if not loaded
+          (<Newsfeed articles = {this.state.articles}/>) // if loaded
+        }
+      </div>
+    );
   }
 }
 

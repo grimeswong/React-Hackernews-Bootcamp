@@ -1,7 +1,8 @@
 import React from 'react';
 
 export default function Loading() {
+  console.log("Component loading");
   return (
-    <div>Loading...</div>
-  )
+    <div>Component Loading...</div>
+  );
 }
